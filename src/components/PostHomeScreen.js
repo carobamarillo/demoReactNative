@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Text, View, Button, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import DetailsScreen from './DetailScreen';
+//import { Icon } from 'react-native-elements';
 
 class HomeScreen extends Component {
   render() {
@@ -69,16 +70,17 @@ export default createBottomTabNavigator(
         const { routeName } = navigation.state;
         let iconName;
         if (routeName === 'Home') {
-          iconName = `ios-help${focused ? '' : '-outline'}`;
+          iconName = `ios-home${focused ? '' : '-outline'}`;
         } else if (routeName === 'Settings') {
-          iconName = `ios-settings${focused ? '' : '-outline'}`;
+          iconName = `ios-options${focused ? '' : '-outline'}`;
         }
         // You can return any component that you like here! We usually use an
         // icon component from react-native-vector-icons
-        return <Ionicons name={iconName} size={30} color={tintColor} />;
+        return <Ionicons name={iconName} size={25} color={tintColor} />;
       }
     }),
     tabBarOptions: {
+      showIcon: true,
       activeTintColor: 'white',
       inactiveTintColor: 'gray',
       style: {
