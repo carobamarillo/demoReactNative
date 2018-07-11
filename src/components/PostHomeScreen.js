@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity, Image } from 'react-native';
+import { List, ListItem } from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import DetailsScreen from './DetailScreen';
@@ -10,7 +11,10 @@ class HomeScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('Details')}>
+        <TouchableOpacity
+          style={[styles.buttonContainer, { with: 120 }]}
+          onPress={() => this.props.navigation.navigate('Details')}
+        >
           <Text style={styles.buttonText}>Detalle</Text>
         </TouchableOpacity>
       </View>
@@ -20,8 +24,30 @@ class HomeScreen extends Component {
 
 class SettingsScreen extends Component {
   render() {
+    const list = [
+      {
+        title: 'German Gonzalez'
+      },
+      {
+        title: 'Cambiar contraseña'
+      },
+      {
+        title: 'Notificaciones'
+      },
+      {
+        title: 'Terminos de uso'
+      }
+      // more items
+    ];
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={styles.container}>
+        <View style={styles.logoContainer}>
+          <Image
+            source={require('../images/profilePicture.png')}
+            style={{ borderRadius: 180, width: 240, height: 240 }}
+          />
+        </View>
+        <List>{list.map((l, i) => <ListItem key={i} title={l.title} />)}</List>
         <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.popToTop()}>
           <Text style={styles.buttonText}>CERRAR SESION</Text>
         </TouchableOpacity>
@@ -30,6 +56,40 @@ class SettingsScreen extends Component {
   }
 }
 
+// Styles
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: '#fff'
+  },
+  logoContainer: {
+    alignItems: 'center',
+    flexGrow: 1,
+    marginTop: 5,
+    justifyContent: 'center'
+  },
+  formContainer: {
+    padding: 20
+  },
+  input: {
+    height: 40,
+    backgroundColor: 'rgba(255,255,255,0.1)',
+    marginBottom: 10,
+    color: '#fff',
+    paddingHorizontal: 10
+  },
+  buttonContainer: {
+    backgroundColor: '#333',
+    paddingVertical: 15,
+    marginBottom: 10
+  },
+  buttonText: {
+    textAlign: 'center',
+    color: '#fff',
+    fontWeight: '700'
+  }
+};
+
 //Home
 const HomeStack = createStackNavigator(
   {
@@ -37,12 +97,13 @@ const HomeStack = createStackNavigator(
     Details: DetailsScreen
   },
   {
+    headerMode: 'none',
     navigationOptions: {
       headerTitle: 'Inicio',
       headerStyle: {
-        backgroundColor: '#1b4180'
+        backgroundColor: '#fff'
       },
-      headerTintColor: '#fff'
+      headerTintColor: '#1b4180'
     }
   }
 );
@@ -56,11 +117,11 @@ const SettingsStack = createStackNavigator(
 
   {
     navigationOptions: {
-      headerTitle: 'Configuracion',
+      headerTitle: 'Perfil',
       headerStyle: {
-        backgroundColor: '#1b4180'
+        backgroundColor: '#fff'
       },
-      headerTintColor: '#fff'
+      headerTintColor: '#1b4180'
     }
   }
 );
@@ -68,17 +129,17 @@ const SettingsStack = createStackNavigator(
 // Tabs
 export default createBottomTabNavigator(
   {
-    Home: HomeStack,
-    Settings: SettingsStack
+    Inicio: HomeStack,
+    Configuracion: SettingsStack
   },
   {
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, tintColor }) => {
         const { routeName } = navigation.state;
         let iconName;
-        if (routeName === 'Home') {
+        if (routeName === 'Inicio') {
           iconName = `ios-home${focused ? '' : '-outline'}`;
-        } else if (routeName === 'Settings') {
+        } else if (routeName === 'Configuracion') {
           iconName = `ios-options${focused ? '' : '-outline'}`;
         }
         // You can return any component that you like here! We usually use an
@@ -88,26 +149,11 @@ export default createBottomTabNavigator(
     }),
     tabBarOptions: {
       showIcon: true,
-      activeTintColor: 'white',
-      inactiveTintColor: 'gray',
+      activeTintColor: '#1b417f',
+      //inactiveTintColor: '',
       style: {
-        backgroundColor: '#1b417f'
+        backgroundColor: '#fff'
       }
     }
   }
 );
-
-const styles = {
-  buttonContainer: {
-    backgroundColor: '#333',
-    paddingVertical: 15,
-    width: 120,
-    borderRadius: 5,
-    elevation: 2
-  },
-  buttonText: {
-    textAlign: 'center',
-    color: '#fff',
-    fontWeight: '700'
-  }
-};

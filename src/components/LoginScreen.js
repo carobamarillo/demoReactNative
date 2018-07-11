@@ -28,7 +28,8 @@ class LoginScreen extends React.Component {
   }
 
   validateLogin() {
-    if (this.state.password === '1234' && this.state.user === 'German Gonzalez') {
+    //if (this.state.password === '1234' && this.state.user === 'German Gonzalez') {
+    if (this.state.password === '' && this.state.user === '') {
       this.props.navigation.navigate('PostHome');
     } else {
       Alert.alert('Usuario o contraseña incorrecta');
