@@ -10,6 +10,8 @@ import { tabnavi } from './reducers/tabnavigation_reducer';
 import LoginScreen from './src/components/LoginScreen';
 import PostHomeScreen from './src/components/PostHomeScreen';
 
+console.disableYellowBox = true;
+
 const RootStack = createStackNavigator(
   {
     Login: LoginScreen,

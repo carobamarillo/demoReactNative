@@ -16,7 +16,7 @@ import { fetchPeople } from '../../actions/index';
 class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { User: '', password: '' };
+    this.state = { user: '', password: '' };
   }
 
   componentDidMount() {
@@ -28,9 +28,10 @@ class LoginScreen extends React.Component {
   }
 
   validateLogin() {
-    if (this.state.password != '' || this.state.User != '') this.props.navigation.navigate('PostHome');
-    else {
-      Alert.alert('Ingrese usuario y contraseña');
+    if (this.state.password === '1234' && this.state.user === 'German Gonzalez') {
+      this.props.navigation.navigate('PostHome');
+    } else {
+      Alert.alert('Usuario o contraseña incorrecta');
     }
   }
 
@@ -44,7 +45,7 @@ class LoginScreen extends React.Component {
         <View style={styles.formContainer}>
           <TextInput
             style={styles.input}
-            onChangeText={User => this.setState({ User })}
+            onChangeText={user => this.setState({ user })}
             placeholder={'Usuario'}
             placeholderTextColor="rgba(255,255,255,0.2)"
             value={this.state.User}
@@ -62,7 +63,7 @@ class LoginScreen extends React.Component {
             returnKeyType="go"
           />
           <TouchableOpacity style={styles.buttonContainer} onPress={() => this.validateLogin()}>
-            <Text style={styles.buttonText}>Iniciar Sesion</Text>
+            <Text style={styles.buttonText}>INICIAR SESION</Text>
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>

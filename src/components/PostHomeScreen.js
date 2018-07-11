@@ -3,6 +3,7 @@ import { Text, View, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import DetailsScreen from './DetailScreen';
+import LoginScreen from './LoginScreen';
 //import { Icon } from 'react-native-elements';
 
 class HomeScreen extends Component {
@@ -21,14 +22,15 @@ class SettingsScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('Details')}>
-          <Text style={styles.buttonText}>Detalle</Text>
+        <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.popToTop()}>
+          <Text style={styles.buttonText}>CERRAR SESION</Text>
         </TouchableOpacity>
       </View>
     );
   }
 }
 
+//Home
 const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
@@ -36,6 +38,7 @@ const HomeStack = createStackNavigator(
   },
   {
     navigationOptions: {
+      headerTitle: 'Inicio',
       headerStyle: {
         backgroundColor: '#1b4180'
       },
@@ -44,13 +47,16 @@ const HomeStack = createStackNavigator(
   }
 );
 
+// Configuracion
 const SettingsStack = createStackNavigator(
   {
     Settings: SettingsScreen,
-    Details: DetailsScreen
+    Login: LoginScreen
   },
+
   {
     navigationOptions: {
+      headerTitle: 'Configuracion',
       headerStyle: {
         backgroundColor: '#1b4180'
       },
@@ -59,6 +65,7 @@ const SettingsStack = createStackNavigator(
   }
 );
 
+// Tabs
 export default createBottomTabNavigator(
   {
     Home: HomeStack,
