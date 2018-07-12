@@ -75,8 +75,7 @@ class LoginScreen extends React.Component {
 const styles = {
   container: {
     flex: 1,
-    backgroundColor: '#303030'
-    //backgroundColor: '#1b4180'
+    backgroundColor: 'rgb(25,69,116)'
   },
   logoContainer: {
     alignItems: 'center',
@@ -91,11 +90,14 @@ const styles = {
     backgroundColor: 'rgba(255,255,255,0.1)',
     marginBottom: 10,
     color: '#fff',
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
+    borderRadius: 5
   },
   buttonContainer: {
-    backgroundColor: '#171717',
-    paddingVertical: 15
+    backgroundColor: 'rgb(17,48,81)',
+    paddingVertical: 15,
+    borderRadius: 5,
+    elevation: 10 // Android
   },
   buttonText: {
     textAlign: 'center',

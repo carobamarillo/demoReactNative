@@ -5,7 +5,6 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import DetailsScreen from './DetailScreen';
 import LoginScreen from './LoginScreen';
-//import { Icon } from 'react-native-elements';
 
 {
   {
@@ -38,7 +37,6 @@ class SettingsScreen extends Component {
       {
         title: 'Terminos de uso'
       }
-      // more items
     ];
     return (
       <View style={styles.container}>
@@ -80,8 +78,9 @@ const styles = {
     paddingHorizontal: 10
   },
   buttonContainer: {
-    backgroundColor: '#171717',
-    paddingVertical: 15
+    backgroundColor: 'rgb(17,48,81)',
+    paddingVertical: 15,
+    elevation: 10 // Android
   },
   buttonText: {
     textAlign: 'center',
@@ -103,7 +102,7 @@ const HomeStack = createStackNavigator(
       headerStyle: {
         backgroundColor: '#fff'
       },
-      headerTintColor: '#333'
+      headerTintColor: '#205791'
     }
   }
 );
@@ -121,7 +120,7 @@ const SettingsStack = createStackNavigator(
       headerStyle: {
         backgroundColor: '#fff'
       },
-      headerTintColor: '#333'
+      headerTintColor: '#205791'
     }
   }
 );
@@ -149,8 +148,8 @@ export default createBottomTabNavigator(
     }),
     tabBarOptions: {
       showIcon: true,
-      activeTintColor: '#171717',
-      //inactiveTintColor: '',
+      activeTintColor: '#205791',
+      //inactiveTintColor: '#0c223a',
       style: {
         backgroundColor: '#fff'
       }
