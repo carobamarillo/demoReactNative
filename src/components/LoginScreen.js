@@ -41,7 +41,7 @@ class LoginScreen extends React.Component {
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <StatusBar barStyle="light-content" />
         <View style={styles.logoContainer}>
-          <Image source={require('../images/tgsLogo.jpg')} />
+          <Image source={require('../images/logo2.png')} />
         </View>
         <View style={styles.formContainer}>
           <TextInput
@@ -75,7 +75,8 @@ class LoginScreen extends React.Component {
 const styles = {
   container: {
     flex: 1,
-    backgroundColor: '#1b4180'
+    backgroundColor: '#303030'
+    //backgroundColor: '#1b4180'
   },
   logoContainer: {
     alignItems: 'center',
@@ -93,7 +94,7 @@ const styles = {
     paddingHorizontal: 10
   },
   buttonContainer: {
-    backgroundColor: '#152a4d',
+    backgroundColor: '#171717',
     paddingVertical: 15
   },
   buttonText: {

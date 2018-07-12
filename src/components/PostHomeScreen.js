@@ -7,18 +7,19 @@ import DetailsScreen from './DetailScreen';
 import LoginScreen from './LoginScreen';
 //import { Icon } from 'react-native-elements';
 
+{
+  {
+    /*<TouchableOpacity
+  style={[styles.buttonContainer, { with: 120 }]}
+  onPress={() => this.props.navigation.navigate('Details')}
+>
+  <Text style={styles.buttonText}>Detalle</Text>
+</TouchableOpacity>*/
+  }
+}
 class HomeScreen extends Component {
   render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <TouchableOpacity
-          style={[styles.buttonContainer, { with: 120 }]}
-          onPress={() => this.props.navigation.navigate('Details')}
-        >
-          <Text style={styles.buttonText}>Detalle</Text>
-        </TouchableOpacity>
-      </View>
-    );
+    return <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} />;
   }
 }
 
@@ -65,7 +66,7 @@ const styles = {
   logoContainer: {
     alignItems: 'center',
     flexGrow: 1,
-    marginTop: 5,
+    marginTop: 10,
     justifyContent: 'center'
   },
   formContainer: {
@@ -79,9 +80,8 @@ const styles = {
     paddingHorizontal: 10
   },
   buttonContainer: {
-    backgroundColor: '#333',
-    paddingVertical: 15,
-    marginBottom: 10
+    backgroundColor: '#171717',
+    paddingVertical: 15
   },
   buttonText: {
     textAlign: 'center',
@@ -97,13 +97,13 @@ const HomeStack = createStackNavigator(
     Details: DetailsScreen
   },
   {
-    headerMode: 'none',
+    //headerMode: 'none',
     navigationOptions: {
       headerTitle: 'Inicio',
       headerStyle: {
         backgroundColor: '#fff'
       },
-      headerTintColor: '#1b4180'
+      headerTintColor: '#333'
     }
   }
 );
@@ -121,7 +121,7 @@ const SettingsStack = createStackNavigator(
       headerStyle: {
         backgroundColor: '#fff'
       },
-      headerTintColor: '#1b4180'
+      headerTintColor: '#333'
     }
   }
 );
@@ -149,7 +149,7 @@ export default createBottomTabNavigator(
     }),
     tabBarOptions: {
       showIcon: true,
-      activeTintColor: '#1b417f',
+      activeTintColor: '#171717',
       //inactiveTintColor: '',
       style: {
         backgroundColor: '#fff'
