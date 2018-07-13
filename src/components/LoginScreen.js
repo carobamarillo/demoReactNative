@@ -1,19 +1,9 @@
-import React from 'react';
-import {
-  Text,
-  View,
-  Button,
-  TextInput,
-  Alert,
-  Image,
-  TouchableOpacity,
-  KeyboardAvoidingView,
-  StatusBar
-} from 'react-native';
+import React, { Component } from 'react';
+import { Text, View, TextInput, Alert, Image, TouchableOpacity, KeyboardAvoidingView, StatusBar } from 'react-native';
 import { connect } from 'react-redux';
 import { fetchPeople } from '../../actions/index';
 
-class LoginScreen extends React.Component {
+class LoginScreen extends Component {
   constructor(props) {
     super(props);
     this.state = { user: '', password: '' };
@@ -41,7 +31,7 @@ class LoginScreen extends React.Component {
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <StatusBar barStyle="light-content" />
         <View style={styles.logoContainer}>
-          <Image source={require('../images/logo2.png')} />
+          <Image source={require('../images/logo2.png')} style={{ width: 250, height: 250 }} />
         </View>
         <View style={styles.formContainer}>
           <TextInput
@@ -91,13 +81,13 @@ const styles = {
     marginBottom: 10,
     color: '#fff',
     paddingHorizontal: 10,
-    borderRadius: 5
+    borderRadius: 2
   },
   buttonContainer: {
     backgroundColor: 'rgb(17,48,81)',
     paddingVertical: 15,
-    borderRadius: 5,
-    elevation: 10 // Android
+    
+    elevation: 2 // Android
   },
   buttonText: {
     textAlign: 'center',
