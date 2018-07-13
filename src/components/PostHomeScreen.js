@@ -16,7 +16,7 @@ class HomeScreen extends Component {
       list: [
         {
           name: 'Orden de compra #460000041',
-          nro: 460000042,
+          nro: 460000041,
           avatar_url: require('../images/sap.png'),
           pos: '10',
           mat: 'escritorio zen1',
@@ -39,7 +39,7 @@ class HomeScreen extends Component {
         {
           name: 'Orden de compra #460000043',
           avatar_url: require('../images/sap.png'),
-          nro: 460000042,
+          nro: 460000043,
           pos: '10',
           mat: 'escritorio zen3',
           qty: '5',
@@ -272,7 +272,7 @@ const styles = {
   buttonContainer: {
     backgroundColor: 'rgb(17,48,81)',
     paddingVertical: 15,
-    margin: 30,
+    margin: 10,
     borderRadius: 5,
     elevation: 2 // Android
   },
