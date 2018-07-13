@@ -15,7 +15,7 @@ class HomeScreen extends Component {
       activeIndex: false,
       list: [
         {
-          name: 'Orden de compra #460000042',
+          name: 'Orden de compra #460000041',
           nro: 460000042,
           avatar_url: require('../images/sap.png'),
           pos: '10',
@@ -37,7 +37,7 @@ class HomeScreen extends Component {
           index: 1
         },
         {
-          name: 'Orden de compra #460000042',
+          name: 'Orden de compra #460000043',
           avatar_url: require('../images/sap.png'),
           nro: 460000042,
           pos: '10',
