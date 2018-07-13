@@ -16,36 +16,36 @@ class HomeScreen extends Component {
       list: [
         {
           name: 'Orden de compra #460000042',
-          nro: '460000042',
+          nro: 460000042,
           avatar_url: require('../images/sap.png'),
           pos: '10',
           mat: 'escritorio zen1',
           qty: '5',
           unit: '3200',
           total: '16000',
-          index: '0'
+          index: 0
         },
         {
           name: 'Orden de compra #460000042',
           avatar_url: require('../images/sap.png'),
-          nro: '460000042',
+          nro: 460000042,
           pos: '10',
           mat: 'escritorio zen2',
           qty: '5',
           unit: '3200',
           total: '16000',
-          index: '1'
+          index: 1
         },
         {
           name: 'Orden de compra #460000042',
           avatar_url: require('../images/sap.png'),
-          nro: '460000042',
+          nro: 460000042,
           pos: '10',
           mat: 'escritorio zen3',
           qty: '5',
           unit: '3200',
           total: '16000',
-          index: '2'
+          index: 2
         }
       ],
       blah: ''
@@ -96,8 +96,10 @@ class HomeScreen extends Component {
     console.log('Data: ', openResult.notification.payload.additionalData);
     console.log('isActive: ', openResult.notification.isAppInFocus);
     console.log('openResult: ', openResult);
+
     let maxIndex = 0;
     let maxOrdenDeCompra = 0;
+
     this.state.list.map((item, i) => {
       if (item.index > maxIndex) {
         maxIndex = item.index;
@@ -106,7 +108,7 @@ class HomeScreen extends Component {
     });
 
     let item = {
-      name: 'Orden de Compra #' + maxOrdenDeCompra,
+      name: 'Orden de compra #' + maxOrdenDeCompra,
       avatar_url: require('../images/sap.png'),
       nro: maxOrdenDeCompra,
       pos: '10',
@@ -214,9 +216,6 @@ class SettingsScreen extends Component {
         },
         {
           title: 'Notificaciones'
-        },
-        {
-          title: 'Terminos de uso'
         }
       ]
     };
@@ -288,7 +287,7 @@ const styles = {
   buttonContainerModalConfirmar: {
     backgroundColor: '#0d47a1',
     paddingVertical: 15,
-    width: 120,
+    width: 90,
     marginRight: 4,
     borderRadius: 5,
     elevation: 2 // Android
@@ -296,14 +295,14 @@ const styles = {
   buttonContainerModalRechazar: {
     backgroundColor: '#d32f2f',
     paddingVertical: 15,
-    width: 120,
+    width: 90,
     borderRadius: 5,
     elevation: 2 // Android
   },
   buttonContainerModalCancelar: {
     backgroundColor: '#333',
     paddingVertical: 15,
-    width: 120,
+    width: 90,
     marginLeft: 4,
     borderRadius: 5,
     elevation: 2 // Android
