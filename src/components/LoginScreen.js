@@ -18,8 +18,8 @@ class LoginScreen extends Component {
   }
 
   validateLogin() {
-    //if (this.state.password === '1234' && this.state.user === 'German Gonzalez') {
-    if (this.state.password === '' && this.state.user === '') {
+    // if (this.state.password === '' && this.state.user === '')
+    if (this.state.password === '1234' && this.state.user === 'German Gonzalez') {
       this.props.navigation.navigate('PostHome');
     } else {
       Alert.alert('Usuario o contraseña incorrecta');
@@ -86,7 +86,7 @@ const styles = {
   buttonContainer: {
     backgroundColor: 'rgb(17,48,81)',
     paddingVertical: 15,
-    
+
     elevation: 2 // Android
   },
   buttonText: {

@@ -175,7 +175,15 @@ class HomeScreen extends Component {
                 </View>
               )
           )}
-          <View style={{ justifyContent: 'center', alignItems: 'center', flex: 1, flexDirection: 'row' }}>
+          <View
+            style={{
+              justifyContent: 'center',
+              alignItems: 'flex-end',
+              flex: 1,
+              flexDirection: 'row',
+              marginBottom: 25
+            }}
+          >
             <TouchableHighlight style={styles.buttonContainerModalConfirmar} onPress={this.openModalOk}>
               <Text style={styles.buttonText}>Liberar</Text>
             </TouchableHighlight>
@@ -230,7 +238,7 @@ class SettingsScreen extends Component {
             style={{ borderRadius: 180, width: 250, height: 250 }}
           />
         </View>
-        <FlatList data={this.state.list1} renderItem={({ item, index }) => <ListItem title={item.title} />} />
+        <FlatList data={this.state.list1} renderItem={({ item, index }) => <ListItem title={item.title} chevron />} />
 
         <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.popToTop()}>
           <Text style={styles.buttonText}>CERRAR SESION</Text>
@@ -247,7 +255,7 @@ const styles = {
   },
   logoContainer: {
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 10,
     marginTop: 20,
     justifyContent: 'center'
   },
@@ -264,7 +272,9 @@ const styles = {
   buttonContainer: {
     backgroundColor: 'rgb(17,48,81)',
     paddingVertical: 15,
-    elevation: 10 // Android
+    margin: 30,
+    borderRadius: 5,
+    elevation: 2 // Android
   },
   buttonText: {
     textAlign: 'center',
